@@ -23,6 +23,7 @@
 int main(int argc, char **argv)
 {
     if (argc == 1)
+<<<<<<< HEAD
     {
         std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *\n";
         return (0);
@@ -36,3 +37,12 @@ int main(int argc, char **argv)
     std::cout << std::endl;
     return (0);
 }
+=======
+        std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
+    else
+    {
+        while()
+    }
+
+}
+>>>>>>> 77e3e90809b8a4470e214e16912c989dace4c9e1
