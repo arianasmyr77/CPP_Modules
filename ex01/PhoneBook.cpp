@@ -1,0 +1,65 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: arforouz <arforouz@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/07/02 16:36:52 by arforouz          #+#    #+#             */
+/*   Updated: 2025/07/02 16:36:52 by arforouz         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "PhoneBook.hpp"
+
+PhoneBook::PhoneBook()
+{
+    contactCount = 0;
+    oldestIndex = 0;
+}
+
+void PhoneBook::addContact()
+{
+    contacts[oldestIndex].fillContact();
+    oldestIndex = (oldestIndex + 1) % 8;
+    if (contactCount < 8)
+        contactCount++;
+    std::cout << "Contact added successfully!\n";
+}
+
+void PhoneBook::searchContacts() const
+{
+    if (contactCount == 0)
+    {
+        std::cout << "PhoneBook is empty. \n";
+        return ;
+    }
+    std::cout   << std::setw(10) << "Index" << "|"
+                << std::setw(10) << "First Name" << "|"
+                << std::setw(10) << "Last Name" << "|"
+                << std::setw(10) << "Nickname" << "\n";
+
+    for (int i = 0; i < contactCount; i++)
+    {
+        contacts[i].showSummary(i);
+    }
+
+    std::cout << "Enter the indx of contact you wish to view: ";
+    std::string input;
+    std::getline(std::cin, input);
+
+    if (input.length() != 1 || input[0] <'0' || input[0] > '7')
+    {
+        std::cout << "Invalid input.\n";
+        return ;
+    }
+
+    int index = input[0] - '0';
+    if (index >= contactCount)
+    {
+        std::cout << "No contact with that id in the phonebook\n";
+        return ;
+    }
+
+    contacts[index].showContact();
+}
