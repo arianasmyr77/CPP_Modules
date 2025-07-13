@@ -15,30 +15,30 @@
 
 void    Contact::fillContact()
 {
-    std::cout << "First Name: ";
+    std::cout << "Please enter First Name: ";
     std::getline(std::cin, firstName);
-    std::cout << "Last Name: ";
+    std::cout << "Please enter Last Name: ";
     std::getline(std::cin, lastName);
-    std::cout << "NickName: ";
+    std::cout << "Please enter NickName: ";
     std::getline(std::cin, nickName);
-    std::cout << "Phone Number: ";
+    std::cout << "Please enter Phone Number: ";
     std::getline(std::cin, phoneNumber);
-    std::cout << "Darkest Secret: ";
+    std::cout << "Please enter Darkest Secret: ";
     std::getline(std::cin, darkestSecret);
 }
 
 void    Contact::showContact() const
 {
-    std::cout << "First Name: " << firstName << "\n";
-    std::cout << "Last Name: " << lastName << "\n";
-    std::cout << "Nick Name: " << nickName << "\n";
-    std::cout << "Phone Number: " << phoneNumber << "\n";
-    std::cout << "Darkest Secret: " << darkestSecret << "\n";
+    std::cout << "First Name\t:" << firstName << std::endl;
+    std::cout << "Last Name\t:" << lastName << std::endl;
+    std::cout << "Nickname\t:" << nickName << std::endl;
+    std::cout << "Phone Number\t:" << phoneNumber << std::endl;
+    std::cout << "Darkest Secret\t:" << darkestSecret << std::endl;
 };
 
 static void printField(const std::string& str)
 {
-    if (str.length() < 10)
+    if (str.length() > 10)
         std::cout << str.substr(0, 9) + ".";
     else
         std::cout << std::setw(10) << str;
@@ -49,5 +49,5 @@ void Contact::showSummary(int index) const
 	std::cout << std::setw(10) << index << "|";
 	printField(firstName); std::cout << "|";
 	printField(lastName); std::cout << "|";
-	printField(nickName); std::cout << "\n";
+	printField(nickName); std::cout << "|" << std::endl;
 }

@@ -31,13 +31,14 @@ void PhoneBook::searchContacts() const
 {
     if (contactCount == 0)
     {
-        std::cout << "PhoneBook is empty. \n";
+        std::cout << "PhoneBook is empty." << std::endl;
         return ;
     }
+    std::cout << "************* PHONEBOOK CONTACTS *************" << std::endl;
     std::cout   << std::setw(10) << "Index" << "|"
                 << std::setw(10) << "First Name" << "|"
                 << std::setw(10) << "Last Name" << "|"
-                << std::setw(10) << "Nickname" << "\n";
+                << std::setw(10) << "Nickname|" << "|\n";
 
     for (int i = 0; i < contactCount; i++)
     {
@@ -50,14 +51,14 @@ void PhoneBook::searchContacts() const
 
     if (input.length() != 1 || input[0] <'0' || input[0] > '7')
     {
-        std::cout << "Invalid input.\n";
+        std::cout << "Invalid Index. Please Enter a value between 0-7" << std::endl;
         return ;
     }
 
     int index = input[0] - '0';
     if (index >= contactCount)
     {
-        std::cout << "No contact with that id in the phonebook\n";
+        std::cout << "No contact with that id in the phonebook." << std::endl;
         return ;
     }
 
