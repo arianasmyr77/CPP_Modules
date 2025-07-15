@@ -20,8 +20,7 @@ int main()
     std::string command;
     std::cout << "\nWelcome to the 80s Phonebook" << std::endl;
     while (true)
-    {
-        //std::cout << "\nWelcome to the 80s Phonebook" << std::endl;
+    {;
         std::cout << "Please choose an option :" << std::endl;
         std::cout << "ADD / SEARCH / EXIT" << std::endl;
         std::getline(std::cin, command);

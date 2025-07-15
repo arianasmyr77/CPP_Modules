@@ -27,9 +27,10 @@ class Contact
         std::string darkestSecret;
 
     public:
-        void fillContact(); //Promting the user to enter all 5 fieldss
+        void fillContact();
         void showContact() const;
-        void showSummary(int index) const; //shows a summary of the SEARCH list
+        void showSummary(int index) const;
+        //bool isValid();
 
 };
 

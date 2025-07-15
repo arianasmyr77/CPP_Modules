@@ -38,7 +38,7 @@ void PhoneBook::searchContacts() const
     std::cout   << std::setw(10) << "Index" << "|"
                 << std::setw(10) << "First Name" << "|"
                 << std::setw(10) << "Last Name" << "|"
-                << std::setw(10) << "Nickname|" << "|\n";
+                << std::setw(10) << "Nickname" << "|\n";
 
     for (int i = 0; i < contactCount; i++)
     {
