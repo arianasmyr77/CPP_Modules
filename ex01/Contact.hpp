@@ -16,7 +16,9 @@
 #include <string>
 #include <iostream>
 #include <iomanip>
-#include <cctype> // for isdigit
+#include <cctype> // for std::isdigit std::isalpha
+#include <iomanip> // for std::setw
+
 class Contact
 {
     private:
@@ -30,7 +32,6 @@ class Contact
         void fillContact();
         void showContact() const;
         void showSummary(int index) const;
-        //bool isValid();
 
 };
 

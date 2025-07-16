@@ -16,7 +16,7 @@
 #include "Contact.hpp"
 #include <iostream>
 #include <limits>
-#include <iomanip> // for setw
+#include <iomanip>
 
 class PhoneBook
 {
