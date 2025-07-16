@@ -12,6 +12,7 @@
 
 #include "Contact.hpp"
 
+
 bool isOnlySpace(const std::string& str)
 {
     for(std::size_t i = 0; i < str.length(); ++i)
