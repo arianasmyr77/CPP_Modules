@@ -24,7 +24,7 @@ void PhoneBook::addContact()
     oldestIndex = (oldestIndex + 1) % 8;
     if (contactCount < 8)
         contactCount++;
-    std::cout << "Contact added successfully!\n";
+    std::cout << "Contact added successfully!" << std::endl;
 }
 
 void PhoneBook::searchContacts() const
@@ -34,11 +34,11 @@ void PhoneBook::searchContacts() const
         std::cout << "PhoneBook is empty." << std::endl;
         return ;
     }
-    std::cout << "************* PHONEBOOK CONTACTS *************" << std::endl;
-    std::cout   << std::setw(10) << "Index" << "|"
+    std::cout << "************ PHONEBOOK CONTACTS ************" << std::endl;
+    std::cout   << "|"<< std::setw(9) << "Index" << "|"
                 << std::setw(10) << "First Name" << "|"
                 << std::setw(10) << "Last Name" << "|"
-                << std::setw(10) << "Nickname" << "|\n";
+                << std::setw(10) << "Nickname" << "|" << std::endl;
 
     for (int i = 0; i < contactCount; i++)
     {

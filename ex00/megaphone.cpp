@@ -13,10 +13,6 @@
 #include <iostream>
 #include <string>
 #include <locale>
-
-#include <iostream>
-#include <cctype>
-
 #include <iostream>
 #include <cctype>
 
@@ -30,7 +26,7 @@ int main(int argc, char **argv)
     for (int i = 1; i < argc; i++)
     {
         for (int j = 0; argv[i][j]; j++)
-            std::cout << (char)std::toupper(argv[i][j]);//we cast it to char because toupper return an int
+            std::cout << (char)std::toupper(argv[i][j]);
         std::cout << " ";
     }
     std::cout << std::endl;

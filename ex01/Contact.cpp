@@ -11,8 +11,6 @@
 /* ************************************************************************** */
 
 #include "Contact.hpp"
-#include <iomanip> // for std::setw
-#include <cctype> // para std::isalpha y std::isdigit
 
 bool isOnlySpace(const std::string& str)
 {
@@ -24,24 +22,17 @@ bool isOnlySpace(const std::string& str)
     return true;
 }
 
-#include <string>
-#include <cctype> // para std::isalpha y std::isdigit
-
 bool isValidNumber(const std::string& str) {
     for (std::size_t i = 0; i < str.length(); ++i) {
         char c = str[i];
         if (std::isalpha(static_cast<unsigned char>(c))) {
             return false;
         }
-        else if (!std::isdigit(static_cast<unsigned char>(c)) &&
+        if (!std::isdigit(static_cast<unsigned char>(c)) &&
             c != '+' && c != '-' && c != '(' && c != ')' &&
             c != '*' && c != '#' && c != ' ') {
-            return false; // símbolo no permitido
+            return false;
         }
-        else if(c != '+' && c != '-' && c != '(' && c != ')' &&
-            c != '*' && c != '#' && c != ' '){
-                return false;
-            }
     }
     return true;
 }
@@ -52,31 +43,32 @@ void    Contact::fillContact()
         std::cout << "Please enter First Name: ";
         std::getline(std::cin, this->firstName);
         if(this->firstName.empty() || isOnlySpace(this->firstName))
-            std::cout << "Field can't be empty. Please enter a value.\n";
+            std::cout << "Field is empty. Please enter a value." << std::endl;
     } while (this->firstName.empty() || isOnlySpace(this->firstName));
     do{
         std::cout << "Please enter Last Name: ";
         std::getline(std::cin, this->lastName);
         if(this->lastName.empty() || isOnlySpace(this->lastName))
-            std::cout << "Field can't be empty. Please enter a value.\n";
+            std::cout << "Field is empty. Please enter a value." << std::endl;
     } while (this->lastName.empty() || isOnlySpace(this->lastName));
     do
     {
         std::cout << "Please enter NickName: ";
         std::getline(std::cin, this->nickName);
         if(this->nickName.empty() || isOnlySpace(this->nickName))
-            std::cout << "Field can't be empty. Please enter a value.\n";
+            std::cout << "Field is empty. Please enter a value." << std::endl;
     } while (this->nickName.empty() || isOnlySpace(this->nickName));
     do
     {
         std::cout << "Please enter Phone Number: ";
         std::getline(std::cin, this->phoneNumber);
         if(this->phoneNumber.empty() || isOnlySpace(this->phoneNumber))
-            std::cout << "Field can't be empty. Please enter a value.\n";
+            std::cout << "Field can't be empty. Please enter a value." << std::endl;
         else if(!isValidNumber(this->phoneNumber)){
-            std::cout << "It should be a number\n";
+            std::cout << "It should be a number " << std::endl;
         }
-    } while (this->phoneNumber.empty() || isOnlySpace(this->phoneNumber) || !isValidNumber(this->phoneNumber));
+    } while (this->phoneNumber.empty() || isOnlySpace(this->phoneNumber) || 
+    !isValidNumber(this->phoneNumber));
     do
     {
         std::cout << "Please enter Darkest Secret: ";
@@ -105,7 +97,7 @@ static void printField(const std::string& str)
 
 void Contact::showSummary(int index) const
 {
-	std::cout << std::setw(10) << index << "|";
+	std::cout << "|" << std::setw(9) << index << "|";
 	printField(firstName); std::cout << "|";
 	printField(lastName); std::cout << "|";
 	printField(nickName); std::cout << "|" << std::endl;
