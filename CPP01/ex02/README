@@ -1,0 +1,21 @@
+| Use Case              | Reference (`&`)                        | Pointer (`*`)                           |
+| --------------------- | -------------------------------------- | --------------------------------------- |
+| Syntax simplicity     | Easier – no need to dereference        | Slightly more complex                   |
+| Can be null?          | ❌ No                                   | ✅ Yes – can be nullptr                  |
+| Must be initialized?  | ✅ Yes – once and forever               | ❌ No – can be assigned later            |
+| Can be reassigned?    | ❌ No – alias is fixed                  | ✅ Yes – can point to another variable   |
+| Used in function args | Often used for input/output parameters | Used when nullable or ownership matters |
+
+
+
+
+
+_________________________________
+
+| Code   | What it gives you                            |
+| ------ | -------------------------------------------- |
+| `ref`  | Value referred to by the reference           |
+| `&ref` | Address of the variable that `ref` refers to |
+| `ptr`  | The address stored in the pointer            |
+| `*ptr` | The value at the address                     |
+| `&ptr` | Address of the pointer itself                |
