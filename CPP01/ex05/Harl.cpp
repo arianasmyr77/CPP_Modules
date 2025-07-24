@@ -31,3 +31,46 @@ void Harl::error()
 {
     std::cout << RED << "This is unacceptable! I want to speak to the manager now."<< std::endl;
 }
+
+void	Harl::complain(std::string level)
+{
+	std::string	levels[4] = {
+		"DEBUG", "INFO", "WARNING", "ERROR"
+	};
+
+	void (Harl::*functions[4])(void) = {
+		&Harl::debug,
+		&Harl::info,
+		&Harl::warning,
+		&Harl::error
+	};
+
+	int pos = 0;
+	while (pos < 4 && levels[pos] != level)
+		pos++;
+
+	switch (pos)
+	{
+		case 0:
+			(this->*functions[0])();
+			(this->*functions[1])();
+			(this->*functions[2])();
+			(this->*functions[3])();
+			break;
+		case 1:
+			(this->*functions[1])();
+			(this->*functions[2])();
+			(this->*functions[3])();
+			break;
+		case 2:
+			(this->*functions[2])();
+			(this->*functions[3])();
+			break;
+		case 3:
+			(this->*functions[3])();
+			break;
+		default:
+			std::cerr << "Error: There is no level with such a name" << std::endl;
+	}
+}
+
