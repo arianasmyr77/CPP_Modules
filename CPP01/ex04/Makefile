@@ -12,7 +12,7 @@
 
 NAME = sed
 
-SRCS =  main.cpp
+SRCS =  main.cpp replace.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
