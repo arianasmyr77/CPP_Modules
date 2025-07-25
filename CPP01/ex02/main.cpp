@@ -16,19 +16,19 @@
 int main()
 {
     std::string str = "HI THIS IS BRAIN";
-    std::string *ptr = &str; //storing the address of str // u use the  & to get the adrdress of a variable
-    std::string  &ref = str; //ref is another name for str
+    std::string *stringPTR = &str;
+    std::string  &stringREF = str;
 
     std::cout << "Memory address of the string:     " << &str << std::endl;
-    std::cout << "Memory address of the pointer:    " << ptr << std::endl;
-    std::cout << "Memory address of the refference: " << &ref << std::endl;
+    std::cout << "Memory address of the pointer:    " << stringPTR << std::endl;
+    std::cout << "Memory address of the refference: " << &stringREF << std::endl;
 
     std::cout << "\033[36m_______________________________________________" 
     << "\033[0m" << std::endl;
 
     std::cout << "Value of the string: " << str << std::endl;
-    std::cout << "Value of the pointer:" << *ptr << std::endl; //   // dereference pointer to get value
-    std::cout << "Value of the refference:" << ref << std::endl; //// reference behaves like str
+    std::cout << "Value of the pointer: " << *stringPTR << std::endl;
+    std::cout << "Value of the refference: " << stringREF << std::endl;
     return (0);
 }
 

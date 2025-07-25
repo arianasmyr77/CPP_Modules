@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: arforouz <arforouz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/23 12:13:47 by arforouz          #+#    #+#             */
-/*   Updated: 2025/07/23 12:13:47 by arforouz         ###   ########.fr       */
+/*   Created: 2025/07/25 14:53:26 by arforouz          #+#    #+#             */
+/*   Updated: 2025/07/25 14:53:26 by arforouz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ HumanA::HumanA(std::string name, Weapon &weapon) : weapon(weapon), name(name)
 
 void HumanA::attack()
 {
-    std::cout << this->name << " attacjs with their " << this->weapon.getType() << std::endl;
+    std::cout << this->name << " attacks with their " << this->weapon.getType() << std::endl;
 }
 
 void HumanA::setWeapon(Weapon &weapon)

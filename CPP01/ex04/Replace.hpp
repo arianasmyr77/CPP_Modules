@@ -15,14 +15,9 @@
 
 #include <string>
 
-#ifndef REPLACER_HPP
-#define REPLACER_HPP
-
-#include <string>
-
 class Replace {
 public:
-    Replace(const std::string& filename, const std::string& s1, const std::string& s2);
+    Replace(const std::string &filename, const std::string &s1, const std::string &s2);
     bool process();
 
 private:
@@ -30,12 +25,9 @@ private:
     std::string _s1;
     std::string _s2;
 
-    bool readFile(std::string& outContent) const;
-    std::string replaceString(const std::string& content) const;
-    bool writeFile(const std::string& content) const;
+    bool readFile(std::string &outContent) const;
+    std::string replaceString(const std::string &content) const;
+    bool writeFile(const std::string &content) const;
 };
-
-#endif
-
 
 #endif

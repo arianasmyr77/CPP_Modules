@@ -10,9 +10,9 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = sed
+NAME = replace
 
-SRCS =  main.cpp replace.cpp
+SRCS =  main.cpp Replace.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

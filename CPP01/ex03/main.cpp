@@ -15,7 +15,7 @@
 
 /* void	ft_leaks(void)
 {
-	system("Leaks -q so_uncivilized");
+	system("Leaks -q zwar");
 } */
 
 int main()

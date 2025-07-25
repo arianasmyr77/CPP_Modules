@@ -14,10 +14,13 @@
 #include <fstream>
 #include <iostream>
 
-Replace::Replace(const std::string& filename, const std::string& s1, const std::string& s2)
-    : _filename(filename), _s1(s1), _s2(s2) {}
+Replace::Replace(const std::string &filename, const std::string &s1, const std::string &s2)
+    : _filename(filename), _s1(s1), _s2(s2)
+{
+}
 
-bool Replace::process() {
+bool Replace::process()
+{
     if (_s1.empty()) {
         std::cerr << "Error: s1 must not be empty." << std::endl;
         return false;
@@ -49,8 +52,6 @@ bool Replace::readFile(std::string &outContent) const {
         outContent += line;
         outContent += '\n';
     }
-
-    // Remove trailing newline (optional)
     if (!outContent.empty() && outContent[outContent.length() - 1] == '\n') {
         outContent.erase(outContent.length() - 1);
     }
@@ -58,7 +59,7 @@ bool Replace::readFile(std::string &outContent) const {
     return true;
 }
 
-std::string Replace::replaceString(const std::string& content) const {
+std::string Replace::replaceString(const std::string &content) const{
     std::string result;
     std::string::size_type pos = 0;
     std::string::size_type found;

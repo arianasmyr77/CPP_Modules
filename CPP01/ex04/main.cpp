@@ -15,7 +15,7 @@
 
 int main(int argc, char* argv[]) {
     if (argc != 4) {
-        std::cerr << "Usage: ./replacer <filename> <s1> <s2>" << std::endl;
+        std::cerr << "Usage: ./replace <filename> <s1> <s2>" << std::endl;
         return 1;
     }
 
@@ -23,8 +23,8 @@ int main(int argc, char* argv[]) {
     std::string s1 = argv[2];
     std::string s2 = argv[3];
 
-    Replace replacer(filename, s1, s2);
-    if (!replacer.process()) {
+    Replace replace(filename, s1, s2);
+    if (!replace.process()) {
         return 1;
     }
 

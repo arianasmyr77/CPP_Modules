@@ -19,10 +19,10 @@ Zombie::Zombie(std::string name)
 
 Zombie::~Zombie()
 {
-    std::cout << this->name << "\033[0;31mdestruction process completed 💀⚰️" << std::endl;
+    std::cout << this->name << "\033[0;31m: 🧟  destruction process completed 💀" << std::endl;
 }
 
 void Zombie::announce()
 {
-    std::cout << this->name << " 🧟  \033[32m: BraiiiiiiinnnzzzZ..." << std::endl;
+    std::cout << this->name << "\033[32m: 🧟 BraiiiiiiinnnzzzZ..." << std::endl;
 }

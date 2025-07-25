@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
+#    By: arforouz <arforouz@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/07/20 01:24:20 by marvin            #+#    #+#              #
-#    Updated: 2025/07/20 01:24:20 by marvin           ###   ########.fr        #
+#    Created: 2025/07/20 01:24:20 by arforouz          #+#    #+#              #
+#    Updated: 2025/07/20 01:24:20 by arforouz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ OBJS = $(SRCS:.cpp=.o)
 
 CXX = g++
 
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -g3 -fsanitize=address
 
 all: $(NAME)
 

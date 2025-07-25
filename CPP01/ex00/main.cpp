@@ -14,9 +14,9 @@
 
 int main(void)
 {
-	Zombie *zombie = newZombie("\033[33mbanished Banshee ");
+	Zombie *zombie = newZombie("\033[33mBani Banshee");
 	zombie->announce();
-	randomChump("\033[38;5;208mmutated Foo\t");
+	randomChump("\033[38;5;208mMutated Fooo");
 	delete zombie;
 	return 0;
 }
