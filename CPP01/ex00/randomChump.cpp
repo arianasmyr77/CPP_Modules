@@ -17,3 +17,29 @@ void    randomChump(std::string name)
     Zombie zombie(name);
     zombie.announce();
 }
+
+/*
+- **`Zombie zombie(name);`**
+  - This creates a `Zombie` object **on the stack** (temporary object, local to this function).
+- **`zombie.announce();`**
+  - Since `zombie` is an **object**, not a pointer, you use the dot (`.`) operator to call its method.
+
+---
+
+### ```cpp
+
+- **`Zombie zombie(name);`**
+  - This creates a `Zombie` object **on the stack** (temporary object, local to this function).
+- **`zombie.announce();`**
+  - Since `zombie` is an **object**, not a pointer, you use the dot (`.`) operator to call its method.
+
+---
+
+### ```cpp
+Zombie *newZombie(std::string name)
+{
+    Zombie *zombie = new Zombie(name); // Heap allocation (returns pointer)
+    return (zombie);
+}
+
+*/

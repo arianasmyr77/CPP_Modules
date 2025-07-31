@@ -17,6 +17,10 @@ Zombie::Zombie(std::string name)
     this->name = name;
 }
 
+// Zombie::Zombie(std::string zombieName)
+// {
+//     this->name = zombieName;
+// }
 Zombie::~Zombie()
 {
     std::cout << this->name << "\033[0;31m: 🧟  destruction process completed 💀" << std::endl;
