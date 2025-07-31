@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: arforouz <arforouz@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/25 17:26:18 by arforouz          #+#    #+#             */
-/*   Updated: 2025/07/29 19:29:04 by arforouz         ###   ########.fr       */
+/*   Updated: 2025/07/31 22:44:29 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,19 @@
 #include <iomanip>
 #include <cctype> 
 
-Class Fixed
+class Fixed
 {
+    private:
+        int _val;
+        static const int bits = 8;
     public:
-        Fixed(void);
-        Fixed(const Fixed& other);
-        int getRawBits( void ) const;
-        void setRawBits( int const raw );
-        ~Fixed(void); 
-};
+        Fixed();
+        Fixed(const Fixed &other);
+        Fixed &operator=(const Fixed &other_fixed);
+        ~Fixed();
 
+        int getRawBits(void) const;
+        void setRawBits(int const raw);
+};
 
 #endif
