@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/25 17:26:18 by arforouz          #+#    #+#             */
-/*   Updated: 2025/07/31 22:44:29 by marvin           ###   ########.fr       */
+/*   Updated: 2025/08/02 22:01:00 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@
 class Fixed
 {
     private:
-        int _val;
-        static const int bits = 8;
+        int _val; //to store fixed point number value 
+        static const int bits = 8; //the number of fractional bits
     public:
         Fixed();
         Fixed(const Fixed &other);
-        Fixed &operator=(const Fixed &other_fixed);
+        Fixed &operator=(const Fixed &other);
         ~Fixed();
 
         int getRawBits(void) const;
