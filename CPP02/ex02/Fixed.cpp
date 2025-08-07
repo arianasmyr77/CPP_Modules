@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 19:25:49 by arforouz          #+#    #+#             */
-/*   Updated: 2025/08/04 13:21:45 by marvin           ###   ########.fr       */
+/*   Updated: 2025/08/07 17:18:08 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,30 +143,27 @@ Fixed Fixed::operator/(const Fixed &other) const
 
 Fixed &Fixed::operator++() 
 {
-    //this->_val += 1;
-    this->_val++;
-    return *this;
+	this->_val += 1;
+	return *this;
 }
 
 Fixed &Fixed::operator--() 
 {
-    //this->_val -= 1;
-    this->_val--;
-    return *this;
+    this->_val -= 1;
+	return *this;
 }
 
 Fixed Fixed::operator++(int)
 {
-	Fixed tmp;
-	tmp = *this;
-	this->_val++;
-	return tmp;
+    Fixed tmp(*this);
+    this->_val++;
+    return tmp;
 }
 
 Fixed Fixed::operator--(int)
 {
-    Fixed tmp = (*this);
-    this->_val -= 1;
+    Fixed tmp(*this);
+    this->_val--;
     return tmp;
 }
 
